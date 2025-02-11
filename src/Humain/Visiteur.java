@@ -1,4 +1,4 @@
 package Humain;
 
-public class Visiteur {
+public final class Visiteur extends Humain{
 }

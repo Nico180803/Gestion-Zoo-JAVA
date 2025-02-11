@@ -1,4 +1,4 @@
 package Humain;
 
-public class Soigneur {
+public final class Soigneur extends Humain {
 }

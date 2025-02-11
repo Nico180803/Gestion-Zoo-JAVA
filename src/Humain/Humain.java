@@ -1,6 +1,6 @@
 package Humain;
 
-public class Humain {
+public abstract class Humain {
     private String nom;
     private String prenom;
     private int age;
