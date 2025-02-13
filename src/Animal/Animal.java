@@ -17,4 +17,10 @@ public abstract class Animal {
     public String getNom() {
         return nom;
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "nom ='" + nom + '\'';
+    }
 }

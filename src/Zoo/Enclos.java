@@ -56,4 +56,14 @@ public class Enclos {
     public void setSale(int sale) {
         this.sale = sale;
     }
+
+    @Override
+    public String toString() {
+        return "Enclos{" +
+                "nom ='" + nom + '\'' +
+                ", capacite =" + capacite +
+                ", sale =" + sale +
+                ", animaux =" + animaux +
+                '}';
+    }
 }

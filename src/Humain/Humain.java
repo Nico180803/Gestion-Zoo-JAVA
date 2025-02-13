@@ -37,4 +37,14 @@ public abstract class Humain {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    @Override
+    public String toString() {
+        return "Humain{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

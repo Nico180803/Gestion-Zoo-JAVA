@@ -17,4 +17,9 @@ public final class Serpent extends Animal{
     public void manger() {
         System.out.println(getNom()+" : Gobe");
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+", Type = 'Serpent'}";
+    }
 }

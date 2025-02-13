@@ -17,4 +17,9 @@ public final class Lion extends Animal{
     public void manger() {
         System.out.println(getNom()+" : Dévore");
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+", Type = 'Lion'}";
+    }
 }

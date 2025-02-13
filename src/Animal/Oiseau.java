@@ -17,4 +17,9 @@ public final class Oiseau extends Animal{
     public void manger() {
         System.out.println(getNom()+" : Picore ");
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+", Type = 'Oiseau'}";
+    }
 }
