@@ -23,6 +23,8 @@ public class Zoo {
         this.enclos = new ArrayList<Enclos>();
     }
 
+    //AJOUTS PARAMETRES
+
     public void ajouterAnimal(Animal a) {
         animals.add(a);
         System.out.println(a.getNom() + " a bien été ajouté");
@@ -39,6 +41,31 @@ public class Zoo {
         enclos.add(e);
         System.out.println(e + " a bien été ajouté");
     }
+
+    //SUPRESSION PARAMETRES
+
+    public void supprimerAnimal(Animal a) {
+        animals.remove(a);
+        System.out.println(a + " a bien été supprimé");
+    }
+
+    public void supprimerSoigneur(Soigneur s) {
+        soigneurs.remove(s);
+        System.out.println(s + " a bien été supprimé");
+    }
+
+    public void supprimerVisiteur(Visiteur v) {
+        visiteurs.remove(v);
+        System.out.println(v + " a bien été supprimé");
+    }
+
+    public void supprimerEnclos(Enclos e) {
+        enclos.remove(e);
+        System.out.println(e + " a bien été supprimé");
+    }
+
+    //LISTES PARAMETRES
+
     public void listeAnimal() {
         for (Animal a : animals) {
             System.out.println(a.toString());
@@ -58,5 +85,31 @@ public class Zoo {
         for (Enclos e : enclos) {
             System.out.println(e.toString());
         }
+    }
+    
+    //GETTER ET SETTER
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 }
