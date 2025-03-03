@@ -3,7 +3,7 @@ package Animal;
 public final class Oiseau extends Animal{
 
     public Oiseau(String nom) {
-        super(nom);
+        super(nom, "Oiseau");
     }
 
     public void bruit() {

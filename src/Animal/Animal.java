@@ -3,10 +3,12 @@ package Animal;
 public abstract class Animal {
     private String nom;
     private Boolean malade;
+    private String espece;
 
-    public Animal(String nom) {
+    public Animal(String nom, String espece) {
         this.nom = nom;
         this.malade = false;
+        this.espece = espece;
     }
 
     public abstract void bruit();
@@ -31,5 +33,9 @@ public abstract class Animal {
 
     public void setMalade(Boolean malade) {
         this.malade = malade;
+    }
+
+    public String getEspece() {
+        return espece;
     }
 }

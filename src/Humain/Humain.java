@@ -6,6 +6,13 @@ public abstract class Humain {
     private int age;
     private String type;
 
+    public Humain(String nom, String prenom, int age, String type) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.age = age;
+        this.type = type;
+    }
+
     public String getType() {
         return type;
     }
