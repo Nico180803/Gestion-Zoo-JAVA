@@ -23,6 +23,18 @@ public class Zoo {
         this.enclos = new ArrayList<Enclos>();
     }
 
+    public void finJournee(){
+        //Augmentation saleté
+        enclos.forEach((e)->{
+            e.salePlus();
+        });
+
+        //SOIGNEURS LIBERE
+        soigneurs.forEach((s)->{
+            s.setOccupe(false);
+        });
+    }
+
     //AJOUTS PARAMETRES
 
     public void ajouterAnimal(Animal a) {
