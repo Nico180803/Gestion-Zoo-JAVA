@@ -23,12 +23,17 @@ public class Enclos {
     }
 
     public void ajouterAnimal(Animal animal) {
-        if (capacite == 0) {
-            System.out.println("L'Enclos est Plein !");
-        }else{
-            this.animaux.add(animal);
-            this.capacite--;
-            System.out.println(animal.getNom()+" est mis dans l'enclos "+this.getNom()+"\nIl reste "+this.getCapacite()+" place dans l'enclo "+this.getNom());
+        if (animaux.contains(animal)) {
+            System.out.println("L'animal est déja présent dans l'enclos");
+        }
+        else {
+            if (capacite == 0) {
+                System.out.println("L'Enclos est Plein !");
+            }else{
+                this.animaux.add(animal);
+                this.capacite--;
+                System.out.println(animal.getNom()+" est mis dans l'enclos "+this.getNom()+"\nIl reste "+this.getCapacite()+" place dans l'enclo "+this.getNom());
+            }
         }
     }
 

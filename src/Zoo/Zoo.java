@@ -38,8 +38,13 @@ public class Zoo {
     //AJOUTS PARAMETRES
 
     public void ajouterAnimal(Animal a) {
-        animals.add(a);
-        System.out.println(a.getNom() + " a bien été ajouté");
+        if (animals.contains(a)) {
+            System.out.println("L'animal est déja ajouté");
+        }
+        else {
+            animals.add(a);
+            System.out.println(a.getNom() + " a bien été ajouté");
+        }
     }
     public void ajouterSoigneur(Soigneur s) {
         soigneurs.add(s);
