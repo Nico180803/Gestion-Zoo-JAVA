@@ -18,6 +18,10 @@ public class Enclos {
         this.animaux = new ArrayList<Animal>();
     }
 
+    public void salePlus(){
+        sale += 1;
+    }
+
     public void ajouterAnimal(Animal animal) {
         if (capacite == 0) {
             System.out.println("L'Enclos est Plein !");
