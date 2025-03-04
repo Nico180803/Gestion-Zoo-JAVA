@@ -57,6 +57,10 @@ public class Enclos {
         this.sale = sale;
     }
 
+    public ArrayList<Animal> getAnimaux() {
+        return animaux;
+    }
+
     @Override
     public String toString() {
         return "Enclos{" +

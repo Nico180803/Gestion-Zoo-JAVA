@@ -1,6 +1,7 @@
 package Humain;
 
 import Animal.Animal;
+import Zoo.Enclos;
 
 import java.util.Random;
 
@@ -30,15 +31,20 @@ public final class Soigneur extends Humain {
         this.specialite = specialite;
     }
 
-    public void diagnostiquer(Animal animal) {
-        if (specialite.equals(animal.getEspece())){
-            Random r = new Random();
-            if (r.nextInt(2) == 0) {
-                animal.setMalade(true);
-                System.out.println("Le soigneur "+ super.getNom()+ " a découvert que l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " est tombé malade.");
+    public void diagnostiquer(Enclos enclos, Animal animal) {
+        if (enclos.getAnimaux().contains(animal)){
+            if (specialite.equals(animal.getEspece())){
+                int chance = 50 + (enclos.getSale()*10);
+                Random r = new Random();
+                if (r.nextInt(100) > chance) {
+                    animal.setMalade(true);
+                    System.out.println("Le soigneur "+ super.getNom()+ " a découvert que l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " est tombé malade.");
+                }
+            }else {
+                System.out.println("Le soigneur n'a pas la bonne spécialité");
             }
         }else {
-            System.out.println("Le soigneur n'a pas la bonne spécialité");
+            System.out.println("Il n'y a pas cette animal dans cette enclo");
         }
     }
 
