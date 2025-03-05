@@ -14,6 +14,7 @@ public class Main {
 
         Lion wouaf = new Lion("Wouaf");
         Serpent sssss = new Serpent("Ssssss");
+        Oiseau envoleToi = new Oiseau("Envole Toi");
 
         Soigneur jean = new Soigneur("DelaFontaine","Jean", 64, "Serpent");
         Soigneur romain = new Soigneur("Arnold", "Romain", 34, "Lion");
@@ -21,7 +22,7 @@ public class Main {
         Visiteur patrick = new Visiteur("Patrick", "Patrick", 32);
         Visiteur elise = new Visiteur("Elise", "Elise", 19);
 
-        Zoo beauval = new Zoo("Beauval", "8 avenu fauch", "Provence");
+        Zoo beauval = new Zoo("Beauval", "8 avenu fauch", "Provence", 50);
 
         Spectacle folie = new Spectacle("Ce lion diabétique va vous étonné !", 2, romain);
 
@@ -37,10 +38,12 @@ public class Main {
         //Test ajout animal
         beauval.ajouterAnimal(wouaf);
         beauval.ajouterAnimal(sssss);
+        beauval.ajouterAnimal(envoleToi);
 
         //Test ajout animal à enclos
         enclosLions.ajouterAnimal(wouaf);
         enclosSerpent.ajouterAnimal(sssss);
+        enclosOiseau.ajouterAnimal(envoleToi);
 
         //Test ajout soigneur
         beauval.ajouterSoigneur(jean);
@@ -58,6 +61,14 @@ public class Main {
         System.out.println();
         beauval.listeEnclos();
 
+        //Supression d'un animal
+        System.out.println();
+        beauval.supprimerAnimal(envoleToi);
+
+            //Affichage animaux zoo
+            System.out.println();
+            beauval.listeAnimal();
+
         //Affichage soigneurs
         System.out.println();
         beauval.listeSoigneur();
@@ -65,6 +76,18 @@ public class Main {
         //Affichage visiteurs
         System.out.println();
         beauval.listeVisiteur();
+
+        //Test soigneur
+        System.out.println();
+        jean.diagnostiquer(enclosLions, wouaf);
+        romain.diagnostiquer(enclosLions, wouaf);
+        romain.soigner(wouaf);
+
+        //Test visiteur
+        // un visiteur voit un animal
+        System.out.println();
+        elise.reagis(wouaf);
+        patrick.reagis(sssss);
 
         //Test spectacle
         System.out.println();

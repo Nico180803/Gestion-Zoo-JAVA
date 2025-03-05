@@ -58,7 +58,7 @@ public class Spectacle {
     }
 
     public void prestation(){
-        System.out.println("Gérant : "+soigneur.getNom());
+        System.out.println("Gérant : "+soigneur.getPrenom());
         for (Tour t : tours) {
             t.execute();
             for (Visiteur visiteur : visiteurs) {

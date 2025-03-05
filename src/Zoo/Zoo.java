@@ -7,23 +7,48 @@ public class Zoo {
     private String nom;
     private String adresse;
     private String region;
+    private double prixEntre;
+    private double solde;
+    private int billet;
+    private int billetEnfant;
 
     private ArrayList<Animal> animals;
     private ArrayList<Soigneur> soigneurs;
     private ArrayList<Visiteur> visiteurs;
     private ArrayList<Enclos> enclos;
 
-    public Zoo(String nom, String adresse, String region) {
+    public Zoo(String nom, String adresse, String region, double prixEntre) {
         this.nom = nom;
         this.adresse = adresse;
         this.region = region;
+        this.prixEntre = prixEntre;
+
         this.animals = new ArrayList<Animal>();
         this.soigneurs = new ArrayList<Soigneur>();
         this.visiteurs = new ArrayList<Visiteur>();
         this.enclos = new ArrayList<Enclos>();
+
+        this.billet = 0;
+        this.billetEnfant = 0;
     }
 
     public void finJournee(){
+        //Calcul du CA de la journée
+        for (Visiteur v : visiteurs) {
+            if (v.getAge()<16){
+                billetEnfant++;
+            }else {
+                billet++;
+            }
+        }
+        solde += ((prixEntre*0.85)*billetEnfant)+(prixEntre*billet);
+        double venteDuJour = ((prixEntre*0.85)*billetEnfant)+(prixEntre*billet);
+        System.out.println(billet + " billets Adulte + " + billetEnfant + " billets enfant ont été vendu aujourd'hui pour un total de " + venteDuJour);
+
+        //reset des billets vendus
+        billetEnfant = 0;
+        billet = 0;
+
         //Augmentation saleté
         enclos.forEach((e)->{
             e.salePlus();
@@ -143,5 +168,13 @@ public class Zoo {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public double getSolde() {
+        return solde;
+    }
+
+    public void setSolde(double solde) {
+        this.solde = solde;
     }
 }

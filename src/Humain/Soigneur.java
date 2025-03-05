@@ -32,19 +32,25 @@ public final class Soigneur extends Humain {
     }
 
     public void diagnostiquer(Enclos enclos, Animal animal) {
-        if (enclos.getAnimaux().contains(animal)){
-            if (specialite.equals(animal.getEspece())){
-                int chance = 50 + (enclos.getSale()*10);
-                Random r = new Random();
-                if (r.nextInt(100) > chance) {
-                    animal.setMalade(true);
-                    System.out.println("Le soigneur "+ super.getNom()+ " a découvert que l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " est tombé malade.");
+        if (animal.getMalade()){
+            System.out.println(animal.getNom()+ " est déjà malade");
+        }else {
+            if (enclos.getAnimaux().contains(animal)){
+                if (specialite.equals(animal.getEspece())){
+                    int chance = 50 + (enclos.getSale()*10);
+                    Random r = new Random();
+                    if (r.nextInt(100) > chance) {
+                        animal.setMalade(true);
+                        System.out.println("Le soigneur "+ super.getPrenom()+ " a découvert que l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " est tombé malade.");
+                    }else {
+                        System.out.println("Le soigneur "+ super.getPrenom()+ " n'a pas découvert de maladie sur l'animal " + animal.getNom() + " de type "+ animal.getEspece() + ".");
+                    }
+                }else {
+                    System.out.println("Le soigneur n'a pas la bonne spécialité");
                 }
             }else {
-                System.out.println("Le soigneur n'a pas la bonne spécialité");
+                System.out.println("Il n'y a pas cette animal dans cette enclo");
             }
-        }else {
-            System.out.println("Il n'y a pas cette animal dans cette enclo");
         }
     }
 
@@ -52,7 +58,9 @@ public final class Soigneur extends Humain {
         if (specialite.equals(animal.getEspece())){
             if (animal.getMalade()) {
                 animal.setMalade(false);
-                System.out.println("Le soigneur "+ super.getNom()+ " a soigné l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " de son mal.");
+                System.out.println("Le soigneur "+ super.getPrenom()+ " a soigné l'animal " + animal.getNom() + " de type "+ animal.getEspece() + " de son mal.");
+            }else {
+                System.out.println(animal.getNom() + " n'est pas malade");
             }
         }else {
             System.out.println("Le soigneur n'a pas la bonne spécialité");
