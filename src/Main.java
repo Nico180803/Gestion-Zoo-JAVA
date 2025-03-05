@@ -25,6 +25,9 @@ public class Main {
 
         Spectacle folie = new Spectacle("Ce lion diabétique va vous étonné !", 2, romain);
 
+        Tour tourUn = new Tour("Rohhhh", wouaf);
+        Tour tourDeux = new Tour("Rohhhh", sssss);
+
 
         //Test Ajout enclos
         beauval.ajouterEnclos(enclosLions);
@@ -63,10 +66,25 @@ public class Main {
         System.out.println();
         beauval.listeVisiteur();
 
+        //Test spectacle
         System.out.println();
 
-        //Test spectacle
+        folie.ajouterAnimal(wouaf);
+        folie.ajouterAnimal(sssss);
 
+        System.out.println();
+
+        folie.ajouterVisiteur(elise);
+        folie.ajouterVisiteur(patrick);
+
+        System.out.println();
+
+        folie.ajouterTour(tourUn);
+        folie.ajouterTour(tourDeux);
+
+        System.out.println();
+
+        folie.prestation();
 
 
         beauval.finJournee();
