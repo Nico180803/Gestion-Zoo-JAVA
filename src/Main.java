@@ -23,35 +23,50 @@ public class Main {
 
         Zoo beauval = new Zoo("Beauval", "8 avenu fauch", "Provence");
 
+        Spectacle folie = new Spectacle("Ce lion diabétique va vous étonné !", 2, romain);
+
+
+        //Test Ajout enclos
         beauval.ajouterEnclos(enclosLions);
         beauval.ajouterEnclos(enclosSerpent);
         beauval.ajouterEnclos(enclosOiseau);
 
+        //Test ajout animal
         beauval.ajouterAnimal(wouaf);
         beauval.ajouterAnimal(sssss);
 
+        //Test ajout animal à enclos
         enclosLions.ajouterAnimal(wouaf);
         enclosSerpent.ajouterAnimal(sssss);
 
+        //Test ajout soigneur
         beauval.ajouterSoigneur(jean);
         beauval.ajouterSoigneur(romain);
 
+        //Test ajout visiteurs
         beauval.ajouterVisiteur(patrick);
         beauval.ajouterVisiteur(elise);
 
+        //Affichage animaux zoo
         System.out.println();
         beauval.listeAnimal();
 
+        //Affichage enclos
         System.out.println();
         beauval.listeEnclos();
 
+        //Affichage soigneurs
         System.out.println();
         beauval.listeSoigneur();
 
+        //Affichage visiteurs
         System.out.println();
         beauval.listeVisiteur();
 
         System.out.println();
+
+        //Test spectacle
+
 
 
         beauval.finJournee();

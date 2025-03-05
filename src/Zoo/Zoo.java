@@ -47,16 +47,31 @@ public class Zoo {
         }
     }
     public void ajouterSoigneur(Soigneur s) {
-        soigneurs.add(s);
-        System.out.println(s.getNom() + " a bien été ajouté");
+        if (soigneurs.contains(s)) {
+            System.out.println("Le soigneur est déja renseigné");
+        }
+        else {
+            soigneurs.add(s);
+            System.out.println(s.getNom() + " a bien été ajouté");
+        }
     }
     public void ajouterVisiteur(Visiteur v) {
-        visiteurs.add(v);
-        System.out.println(v.getNom()+ " a bien été ajouté");
+        if (visiteurs.contains(v)) {
+            System.out.println("Le visiteur est déja renseigné");
+        }
+        else {
+            visiteurs.add(v);
+            System.out.println(v.getNom() + " a bien été ajouté");
+        }
     }
     public void ajouterEnclos(Enclos e) {
-        enclos.add(e);
-        System.out.println(e + " a bien été ajouté");
+        if (enclos.contains(e)) {
+            System.out.println("L'enclos est déja renseigné");
+        }
+        else {
+            enclos.add(e);
+            System.out.println(e + " a bien été ajouté");
+        }
     }
 
     //SUPRESSION PARAMETRES

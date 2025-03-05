@@ -40,6 +40,7 @@ public class Enclos {
     public void nettoyage(Soigneur soigneur) {
         System.out.println(soigneur.getNom()+" nettoie l'enclos "+this.getNom());
         this.sale = 0;
+        soigneur.isOccupe();
     }
 
     public String getNom() {

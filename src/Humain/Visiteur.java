@@ -10,11 +10,11 @@ public final class Visiteur extends Humain{
 
     public void reagis(Animal animal){
         if (animal instanceof Lion)
-            System.out.println ("Les visiteurs applaudisse");
+            System.out.println (getNom()+" applaudit");
         else if (animal instanceof Oiseau) {
-            System.out.println ("Les visiteurs sont stupéfaits");
+            System.out.println (getNom()+" est stupéfait");
         }else {
-            System.out.println("Les visiteur s'exclament");
+            System.out.println(getNom()+" s'exclame !");
         }
     }
 }
